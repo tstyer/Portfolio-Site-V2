@@ -1,38 +1,41 @@
 import { model, Schema, type Document } from 'mongoose';
 
-/* CONTINUE HERE:
-
-The typical shape of a typed Mongoose model file has four parts, in this order:
-
-1. Imports — what we covered last message (Schema, model, type Document).
-
-2. An interface describing the document's shape — a TypeScript interface that extends Mongoose's Document, listing each field name and its TS type. This is your field list from earlier, but written as TypeScript types rather than data:
-
-
 interface IProject extends Document {
-  fieldName: string;
-   ...one line per field
+  title: string;
+  subTitle: string;
+  description: string;
+  image: string;
+  techTags: string[];
+  githubLink: string;
+  deployedLink?: string; // question mark means it's not required - required: false in schema below
+  slug?: string;
 }
-(The I prefix on IProject is just a common convention for "this is an interface," not required.)
 
-3. The schema itself — a new Schema<...>() call, generic-typed with the interface from step 2, containing the actual Mongoose field definitions (type, required, etc. — the Mongoose-specific config, not just TS types):
+const projectSchema = new Schema<IProject> ({
+    title: {type: String, required: true},
+    subTitle: {type: String, required: true},
+    description: {type: String, required: true},
+    image: {type: String, required: true}, // This is ttype: String, because images are URL paths. 
+    techTags: {type: [String], required: true},
+    githubLink: {type: String, required: true}, // Links should also be type: String because mongoose doesn't have a type of 'URL'. 
+    deployedLink: {type: String, required: false}, // Array of strings
+    slug: {type: String, required: true, unique: true, lowercase: true, trim: true}, // slug is added to end of url and is given to each project as a unique value - two projects can't have the same slug.
+},
+{timestamps: true}
+)
 
-
-const projectSchema = new Schema<IProject>(
-  {
-    fieldName: { type: String, required: true },
-     ...
-  },
-  { timestamps: true }
-);
-That second argument ({ timestamps: true }) is the built-in createdAt/updatedAt option we talked about earlier — worth including now since you have createdAt in your field list.
-
-4. The model export — compiling the schema into a model and exporting it, so other files (your routes/controllers) can import it and run queries:
-
+// Generate slug before model() runs so required: true passes on slug
+projectSchema.pre("validate", function () {
+    if (!this.slug && this.title) {
+        this.slug = this.title
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+    }
+});
 
 export default model<IProject>("Project", projectSchema);
-The string "Project" here is the model name — Mongoose auto-pluralizes and lowercases it to decide the actual MongoDB collection name ("Project" → projects).
 
-That's the full skeleton. Want to fill in step 2 (the interface) together using your field list from before, or do you want to try writing it yourself first and have me review it?
 
-*/
+
