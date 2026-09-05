@@ -6,16 +6,19 @@ interface IContactForm extends Document {
     firstName: string,
     lastName: string,
     email: string,
-    phoneNumber?: number,
+    phoneNumber?: string, // phone numbers always stored as strings - "Number" cannot begin with zero or do math on them
     messageContent: string,
+    createdAt: Date
 };
 
 const contactFormSchema = new Schema<IContactForm>({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
     email: {type: String, required: true},
-    phoneNumber: {type: Number, required: false},
+    phoneNumber: {type: String, required: false},
     messageContent: {type: String, required: true}
-});
+},
+    {timestamps: true}
+);
 
-export default model<IContactForm>("Contact Form", contactFormSchema);
+export default model<IContactForm>("ContactForm", contactFormSchema);
