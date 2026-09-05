@@ -1,5 +1,6 @@
 import { model, Schema, type Document } from 'mongoose';
 
+// Create the interface so typescript knows they exist in the document.
 interface IProject extends Document {
   title: string;
   subTitle: string;
