@@ -16,7 +16,7 @@ const blogPostSchema = new Schema<IBlogPost>({
     shortDescription: {type: String, required: true},
     bodyText: {type: String, required: true},
     image: {type: String, required: false},
-    slug: {type: String, required: true, lowercase: true, trim: true, unqiue: true},
+    slug: {type: String, required: true, lowercase: true, trim: true, unique: true},
 })
 
 
@@ -29,3 +29,6 @@ blogPostSchema.pre("validate", function () {
         .replace(/(^-|-$)/g, "");
     }
 })
+
+export default model<IBlogPost>("Blog", blogPostSchema);
+
