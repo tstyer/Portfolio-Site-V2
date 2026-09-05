@@ -7,8 +7,8 @@ interface IContactForm extends Document {
     lastName: string,
     email: string,
     phoneNumber?: string, // phone numbers always stored as strings - "Number" cannot begin with zero or do math on them
+    subject: string,
     messageContent: string,
-    createdAt: Date
 };
 
 const contactFormSchema = new Schema<IContactForm>({
@@ -16,6 +16,7 @@ const contactFormSchema = new Schema<IContactForm>({
     lastName: {type: String, required: true},
     email: {type: String, required: true},
     phoneNumber: {type: String, required: false},
+    subject: {type: String, required: true},
     messageContent: {type: String, required: true}
 },
     {timestamps: true}
