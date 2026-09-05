@@ -9,6 +9,8 @@ interface IContactForm extends Document {
     phoneNumber?: string, // phone numbers always stored as strings - "Number" cannot begin with zero or do math on them
     subject: string,
     messageContent: string,
+    createdAt?: Date,
+    updatedAt?: Date,
 };
 
 const contactFormSchema = new Schema<IContactForm>({
