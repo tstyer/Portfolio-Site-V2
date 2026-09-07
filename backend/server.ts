@@ -1,3 +1,5 @@
+/* ----- IMPORTS  ----- */
+
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
@@ -6,6 +8,11 @@ import dotenv from 'dotenv';
 // Routes Imports:
 import projectRouter from './routes/projectRoutes.js'
 import blogRouter from './routes/blogRoutes.js';
+import contactFormRouter from './routes/contactFormRoutes.js';
+
+
+
+/* ----- SERVER CODE ----- */
 
 dotenv.config();
 
@@ -16,6 +23,7 @@ app.use(express.json());
 // BACKEND ROUTES:
 app.use('/api/projects', projectRouter); // for any request that comes from /api/projects, send control over to projectRouter
 app.use('/api/blogs', blogRouter);
+app.use('/api/contact', contactFormRouter);
 
 const PORT = process.env.PORT || 5000;
 
