@@ -3,11 +3,16 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+// Routes Imports:
+import projectRouter from './routes/projectRoutes.js'
+
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use('/api/projects', projectRouter); // for any request that comes from /api/projects, send control over to projectRouter
 
 const PORT = process.env.PORT || 5000;
 
