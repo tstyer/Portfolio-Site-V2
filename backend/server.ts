@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 // Routes Imports:
 import projectRouter from './routes/projectRoutes.js'
+import blogRouter from './routes/blogRoutes.js';
 
 dotenv.config();
 
@@ -12,7 +13,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// BACKEND ROUTES:
 app.use('/api/projects', projectRouter); // for any request that comes from /api/projects, send control over to projectRouter
+app.use('/api/blogs', blogRouter);
 
 const PORT = process.env.PORT || 5000;
 
