@@ -26,3 +26,19 @@ which signals successful rendering of the url:
 You can also see a successful render in the console:
 
 ![Screenshot of console](./frontend/src/assets/readme_imgs/manual_testing/backend_routing/project_route_success_console.png)
+
+
+**Testing Endpoints with Postman**
+
+With the server running (`npm run dev`), each endpoint was tested individually in Postman before moving on to the next.
+
+- `GET /api/projects` and `GET /api/blogs` - sent with no body. Expected an empty `[]` array with a `200` status, since no data has been seeded yet. This confirms the route/controller/model chain works even with an empty database.
+
+- `POST /api/contact` - tested in stages to confirm the validation middleware actually works, not just the happy path:
+  1. A fully valid JSON body (all required fields present, valid email) -> expected `201` with the saved document returned, including a generated `_id` and `createdAt`.
+  2. A body missing a required field -> expected `400` with the "missing required field" message.
+  3. A body with an invalid email format -> expected `400` with the "invalid email format" message.
+  4. A valid body sent again afterwards, to confirm the endpoint wasn't just rejecting everything.
+  5. Checked MongoDB Atlas's Data Explorer after a successful `201` to confirm the message was actually saved, not just reported as successful by the API.
+
+- **Centralized error handler** - verified separately by deliberately breaking something the per-route `try`/`catch` blocks wouldn't catch (temporarily using an invalid `MONGODB_URI` in `.env`), then hitting an endpoint. Expected a generic `{"message": "Something went wrong"}` response at `500`, with no stack trace or internal details exposed.
