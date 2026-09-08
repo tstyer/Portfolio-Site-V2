@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 import projectRouter from './routes/projectRoutes.js'
 import blogRouter from './routes/blogRoutes.js';
 import contactFormRouter from './routes/contactFormRoutes.js';
-
+import { errorHandler } from './middleware/errorHandling.js'
 
 
 /* ----- SERVER CODE ----- */
@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
   res.send("API is running");
 });
 
+app.use(errorHandler)
+// global error handler goes below all other routes - deliberately vague
+
+// app.listen is what happens when the app starts accepting requests - so needs to pass error handler
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
