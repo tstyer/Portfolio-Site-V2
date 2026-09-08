@@ -9,6 +9,8 @@ import dotenv from 'dotenv';
 import projectRouter from './routes/projectRoutes.js'
 import blogRouter from './routes/blogRoutes.js';
 import contactFormRouter from './routes/contactFormRoutes.js';
+
+// MAIN APP ERROR HANDLER:
 import { errorHandler } from './middleware/errorHandling.js'
 
 
