@@ -40,7 +40,7 @@ I first created a collection dedicated to this project:
 
 ![Screenshot of collection](./frontend/src/assets/readme_imgs/postman/setting_up_new_collection.png)
 
-**Contact Form Route Testing**
+**POSTMAN Contact Form Route Testing**
 
 I then sent a post request to my contact form model and got the error message I created:
 
@@ -52,7 +52,13 @@ In the terminal, there was a connection error to MongoDB, so I had to resolve th
 
 ![Screenshot of IP address change](./frontend/src/assets/readme_imgs/postman/mongodb_ip_all_access.png)
 
+After fixing the IP address, I sent it successfully:
 
+![Screenshot of post request](./frontend/src/assets/readme_imgs/postman/post_req_contactform_success.png)
+
+MongoDB Updated:
+
+![Screenshot of mongoDB w/post sucess](./frontend/src/assets/readme_imgs/postman/mongodb_contactform_success.png)
 
 **Testing Endpoints with Postman**
 
