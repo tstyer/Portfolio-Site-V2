@@ -40,6 +40,7 @@ I first created a collection dedicated to this project:
 
 ![Screenshot of collection](./frontend/src/assets/readme_imgs/postman/setting_up_new_collection.png)
 
+
 **POSTMAN Contact Form Route Testing**
 
 I then sent a post request to my contact form model and got the error message I created:
@@ -59,6 +60,23 @@ After fixing the IP address, I sent it successfully:
 MongoDB Updated:
 
 ![Screenshot of mongoDB w/post sucess](./frontend/src/assets/readme_imgs/postman/mongodb_contactform_success.png)
+
+
+**POSTMAN Project Route Testing**
+
+I had the same success fetching the projects on the first postman test:
+
+![Screenshot of successful request](./frontend/src/assets/readme_imgs/postman/project_success_get_request.png)
+
+
+**POSTMAN Blog Get Request Testing**
+
+The following postman request was a simple get request and the success was a terminal log and empty array show below:
+
+![Screenshot of empty array](./frontend/src/assets/readme_imgs/postman/success_blog_get_req.png)
+
+![Screenshot of success message](./frontend/src/assets/readme_imgs/postman/success_blog_get_req_2.png)
+
 
 **Testing Endpoints with Postman**
 
