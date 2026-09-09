@@ -1,5 +1,7 @@
 # Portfolio-Site-V2
 
+---
+
 ## Error Handling
 
 ### Centralised Error Handling
@@ -8,6 +10,7 @@ I created a main error handler which runs after each route is called in the serv
 
 It is set up to be vague so that those sending requests cannot see any potentially important information in the error message. 
 
+---
 
 ## Testing
 
@@ -26,6 +29,29 @@ which signals successful rendering of the url:
 You can also see a successful render in the console:
 
 ![Screenshot of console](./frontend/src/assets/readme_imgs/manual_testing/backend_routing/project_route_success_console.png)
+
+
+
+#### Post Man
+
+I used Postman to test the backend routes functioned properly before allowing requests to be sent to it from the client/frontend. 
+
+I first created a collection dedicated to this project:
+
+![Screenshot of collection](./frontend/src/assets/readme_imgs/postman/setting_up_new_collection.png)
+
+**Contact Form Route Testing**
+
+I then sent a post request to my contact form model and got the error message I created:
+
+![Screenshot of error message](./frontend/src/assets/readme_imgs/postman/error_fetching_contactform_data.png)
+
+This is a specific message I wrote in the controller, so the request passed the first, central middleware, but couldn't pass my controller. 
+
+In the terminal, there was a connection error to MongoDB, so I had to resolve that in my MongoDB cluster, first. What I needed to do was add an ip address of 0.0.0.0/0 so that all access was allowed as my IP would change. 
+
+![Screenshot of IP address change](./frontend/src/assets/readme_imgs/postman/mongodb_ip_all_access.png)
+
 
 
 **Testing Endpoints with Postman**

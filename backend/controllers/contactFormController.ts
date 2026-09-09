@@ -17,7 +17,7 @@ export async function contactFormData(req: Request, res: Response) {
         console.log("Success collecting user contact form data");
         res.status(201).json(messageData);
     } catch (err) {
-        console.log("Error fetching data in 'contactFormData' controller");
+        console.error("Error in 'contactFormData' controller:", err);
         res.status(500).json({message: "Server error fetching contact form data"});
     }
 }
