@@ -92,3 +92,20 @@ With the server running (`npm run dev`), each endpoint was tested individually i
   5. Checked MongoDB Atlas's Data Explorer after a successful `201` to confirm the message was actually saved, not just reported as successful by the API.
 
 - **Centralized error handler** - verified separately by deliberately breaking something the per-route `try`/`catch` blocks wouldn't catch (temporarily using an invalid `MONGODB_URI` in `.env`), then hitting an endpoint. Expected a generic `{"message": "Something went wrong"}` response at `500`, with no stack trace or internal details exposed.
+
+
+### Creating Seed Data
+
+The GET routes for projects and blogs only ever returned empty arrays, since no real content existed yet. To have realistic data to build and test the frontend against, I wrote a `seed.ts` script that connects to the database directly, clears out any existing projects/blogs, and inserts a set of sample documents.
+
+Running the script successfully in the terminal:
+
+![Screenshot of successful seed run](./frontend/src/assets/readme_imgs/seed_testing/seed_testing_console.png)
+
+The 3 seeded projects, visible in MongoDB Atlas's Data Explorer:
+
+![Screenshot of seeded projects in MongoDB](./frontend/src/assets/readme_imgs/seed_testing/mongodb_projects.png)
+
+The 4 seeded blog posts, visible in MongoDB Atlas's Data Explorer:
+
+![Screenshot of seeded blogs in MongoDB](./frontend/src/assets/readme_imgs/seed_testing/mongodb_blogs.png)
