@@ -9,17 +9,9 @@ export default function App() {
       
     <Routes>
 
-      <Route path='/' element={<HomePage />}>
-        <HomePage />
-      </Route>
-
-      <Route path='/blog' element={<BlogPage />}>
-        <BlogPage />
-      </Route>
-
-      <Route path='/contact' element={<ContactPage />}>
-        <ContactPage />
-      </Route>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/blog' element={<BlogPage />} />
+      <Route path='/contact' element={<ContactPage />} />
     
     </Routes>
     
