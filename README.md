@@ -31,6 +31,19 @@ You can also see a successful render in the console:
 ![Screenshot of console](./frontend/src/assets/readme_imgs/manual_testing/backend_routing/project_route_success_console.png)
 
 
+**Frontend Routing**
+
+After wiring up React Router in `App.tsx` (Home, Blog, and Contact routes), I ran the frontend with `npm run dev` and manually visited each route in the browser to confirm the correct page component rendered at the correct URL.
+
+Home page at `/`:
+
+![Screenshot of home page route](./frontend/src/assets/readme_imgs/manual_testing/frontend_routing/homepage_shows.png)
+
+Contact page at `/contact`:
+
+![Screenshot of contact page route](./frontend/src/assets/readme_imgs/manual_testing/frontend_routing/contactpage_shows.png)
+
+
 
 #### Post Man
 
