@@ -1,4 +1,11 @@
 @import "tailwindcss";
 
+body {
+  background-color: #D6D3CC;
+}
 
+@theme {
+  --font-heading: 'Courier Prime', serif;
+  --font-text: 'Anonymous Pro', sans-serif;
+}
 
