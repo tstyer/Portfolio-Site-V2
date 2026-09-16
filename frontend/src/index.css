@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  background-color: #D6D3CC;
+  background-color: #f1eee6;
 }
 
 @theme {
-  --font-heading: 'Courier Prime', serif;
+  --font-heading: 'Geist', sans-serif;
   --font-text: 'Anonymous Pro', sans-serif;
 }
 
+button {
+  background-color: #D6D3CC;
+}
