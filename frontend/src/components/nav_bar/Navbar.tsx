@@ -1,24 +1,42 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-
-
 export function NavBar() {
-    return(
-        <div className='flex w-full h-auto justify-between'>
-            
-            <div> 
-                <Link to={"/"} className='font-bold font-stretch-expanded font-heading'>Travis.</Link>
-            </div>
-           
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className='relative flex w-full h-auto justify-between items-center'>
+
             <div>
-                <nav className='flex gap-12 font-heading'>
-                    <Link to={"/"} className='font-stretch-expanded text-sm'>HOME</Link>
-                    <Link to={"/blog"} className='font-stretch-expanded text-sm'>BLOG</Link>
-                    <Link to={"/contact"} className='font-stretch-expanded text-sm'>CONTACT</Link>
-                </nav>
+                <Link to={"/"} className='font-bold font-stretch-expanded font-heading text-base md:text-lg'>Travis.</Link>
             </div>
-            
-          
+
+            {/* Desktop links - hidden below the sm breakpoint, visible from sm up */}
+            <nav className='hidden sm:flex gap-6 md:gap-12 font-heading'>
+                <Link to={"/"} className='font-stretch-expanded text-sm md:text-base'>HOME</Link>
+                <Link to={"/blog"} className='font-stretch-expanded text-sm md:text-base'>BLOG</Link>
+                <Link to={"/contact"} className='font-stretch-expanded text-sm md:text-base'>CONTACT</Link>
+            </nav>
+
+            {/* Burger button - visible below sm, hidden from sm up */}
+            <button
+                className='flex sm:hidden flex-col gap-1.5 p-2'
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
+            >
+                <span className='block w-6 h-0.5 bg-black'></span>
+                <span className='block w-6 h-0.5 bg-black'></span>
+                <span className='block w-6 h-0.5 bg-black'></span>
+            </button>
+
+            {/* Mobile dropdown - only rendered while isOpen is true */}
+            {isOpen && (
+                <nav className='absolute top-full left-0 w-full flex flex-col gap-4 bg-[#f1eee6] border border-black p-4 sm:hidden font-heading'>
+                    <Link to={"/"} onClick={() => setIsOpen(false)} className='font-stretch-expanded text-sm'>HOME</Link>
+                    <Link to={"/blog"} onClick={() => setIsOpen(false)} className='font-stretch-expanded text-sm'>BLOG</Link>
+                    <Link to={"/contact"} onClick={() => setIsOpen(false)} className='font-stretch-expanded text-sm'>CONTACT</Link>
+                </nav>
+            )}
         </div>
     )
 }
