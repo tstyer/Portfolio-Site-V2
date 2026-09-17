@@ -29,7 +29,7 @@ export function HomePage() {
                 </div>
 
                 <div className="shrink-0">
-                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-48 md:h-82 object-cover"/>
+                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-48 md:h-62 rounded-lg object-cover border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"/>
                 </div>
             </div>
 
