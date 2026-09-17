@@ -20,13 +20,13 @@ export function Footer() {
             <div className='flex gap-4'>
                 {/* Social Media */}
                 <a href="https://www.github.com/tstyer" rel='noopener noreferrer' target='_blank'>
-                    <i className="fa-brands fa-square-github fa-xl text-amber-900 inline-block p-1 rounded-full transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"></i>
+                    <i className="fa-brands fa-square-github fa-xl text-amber-900 transition-colors duration-300 hover:text-blue-500"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/travis-code/" rel='noopener noreferrer' target='_blank'>
-                    <i className="fa-brands fa-linkedin-in fa-xl text-amber-900 inline-block p-1 rounded-full transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"></i>
+                    <i className="fa-brands fa-linkedin-in fa-xl text-amber-900 transition-colors duration-300 hover:text-blue-500"></i>
                 </a>
                 <a href="https://substack.com/" rel='noopener noreferrer' target='_blank'>
-                    <i className="fa-brands fa-substack fa-xl text-amber-900 inline-block p-1 rounded-full transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"></i>
+                    <i className="fa-brands fa-substack fa-xl text-amber-900 transition-colors duration-300 hover:text-blue-500"></i>
                 </a>
             </div>
         </footer>

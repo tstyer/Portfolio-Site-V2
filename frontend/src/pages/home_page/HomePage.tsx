@@ -2,6 +2,7 @@ import { NavBar } from "../../components/nav_bar/Navbar"
 import { Link } from "react-router"
 import portfolio_headshot from '../../assets/portfolio_headshot.jpeg';
 import { Footer } from "../../components/footer/Footer";
+import { AboutMe } from "../../components/about/AboutMe";
 
 export function HomePage() {
     return(
@@ -14,7 +15,7 @@ export function HomePage() {
                 <div>
                     <div className="px-3 py-2">
                         <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Full-Stack <span className="italic">Developer</span>. <br />SEO <span className="italic">Engineer.</span> <br /><span className="italic">Copywriter.</span></h1>
-                        <h2 className="font-text text-sm sm:text-base md:text-lg pt-2 md:pt-4 max-w-2xl">Website Design, Full-Stack Development, SEO implementation and ethical copywriting,<br />
+                        <h2 className="font-text text-sm sm:text-base md:text-lg pt-2 md:pt-4 max-w-2xl">With Website Design, Full-Stack Development, SEO implementation and ethical copywriting,
                         I'll present your business that leads to more customers.
                         </h2>
                     </div>
@@ -33,6 +34,8 @@ export function HomePage() {
                     <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-48 md:h-52 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
                 </div>
             </div>
+
+           <AboutMe />
 
            <Footer />
 
