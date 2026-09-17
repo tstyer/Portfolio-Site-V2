@@ -4,6 +4,7 @@ import portfolio_headshot from '../../assets/portfolio_headshot.jpeg';
 import { Footer } from "../../components/footer/Footer";
 import { AboutMe } from "../../components/about/AboutMe";
 import { Skills } from "../../components/skills/Skills";
+import { FeaturedProjects } from "../../components/projects/FeaturedProjects";
 
 export function HomePage() {
     return(
@@ -39,6 +40,8 @@ export function HomePage() {
            <AboutMe />
 
            <Skills />
+
+           <FeaturedProjects />
 
            <Footer />
 
