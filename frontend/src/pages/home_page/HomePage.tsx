@@ -1,6 +1,7 @@
 import { NavBar } from "../../components/nav_bar/Navbar"
 import { Link } from "react-router"
 import portfolio_headshot from '../../assets/portfolio_headshot.jpeg';
+import { Footer } from "../../components/footer/Footer";
 
 export function HomePage() {
     return(
@@ -29,11 +30,11 @@ export function HomePage() {
                 </div>
 
                 <div className="shrink-0">
-                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-48 md:h-62 rounded-lg object-cover border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"/>
+                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-48 md:h-52 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
                 </div>
             </div>
 
-           
+           <Footer />
 
         </div>
     )

@@ -14,7 +14,7 @@ export default function App() {
       <Route path='/contact' element={<ContactPage />} />
     
     </Routes>
-    
+
     </div>
    
 

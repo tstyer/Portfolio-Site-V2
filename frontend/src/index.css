@@ -14,7 +14,7 @@ body {
 
 @theme {
   --font-heading: 'Geist', sans-serif;
-  --font-text: 'Anonymous Pro', sans-serif;
+  --font-text: 'Anonymous Pro', sans;
 }
 
 button {
