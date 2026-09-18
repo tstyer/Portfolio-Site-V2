@@ -4,6 +4,8 @@ interface Project {
     _id: string;
     title: string;
     subTitle: string;
+    description: String,
+    image: String,
     techTags: string[];
     githubLink: string;
 }
@@ -27,12 +29,14 @@ export function FeaturedProjects() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {projects.map((project) => (
                     <div key={project._id} className="border border-solid border-emerald-100 rounded-lg overflow-hidden bg-[#D6D3CC]/40">
-                        <div className="h-48 bg-[#D6D3CC] flex items-center justify-center">
+                        <div className="h-48 bg-[#D6D3CC] flex items-center justify-center"
+                            style={{ backgroundImage: `url(${project.image})` }}>
                             <p className="font-text text-xs text-amber-900/60">{project.title}</p>
                         </div>
                         <div className="p-5">
                             <h3 className="font-heading font-bold text-lg">{project.title}</h3>
                             <p className="font-text text-sm text-amber-900/80 mt-2">{project.subTitle}</p>
+                            <p className='font-text text-xs text-amber-900/80 mt-2'>{project.description}</p>
                             <div className="flex flex-wrap gap-2 mt-4">
                                 {project.techTags.map((tag) => (
                                     <span key={tag} className="font-text text-xs border border-solid border-black/20 rounded px-2 py-1">
