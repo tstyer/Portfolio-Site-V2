@@ -12,6 +12,21 @@ It is set up to be vague so that those sending requests cannot see any potential
 
 ---
 
+## Contact Form
+
+### How the form's state works
+
+**useState** is what keeps track of everything currently typed into the form, and what stage the submission is in. There are two separate pieces of state:
+
+- One object holding the current value of every field (first name, last name, email, phone, subject, message) - this starts out empty and updates as the user types.
+- A single status value (`idle`, `submitting`, `success`, or `error`) - this controls what the submit button says and whether a success or error message shows underneath it.
+
+**ChangeEvent** fires every single time the user types (or deletes) a character in any input or the message box. Rather than writing a separate function for each of the six fields, there's one shared handler that looks at *which* input fired the event (via its `name` attribute) and updates just that one field in the state object, leaving the others untouched.
+
+**SubmitEvent** fires once, when the "Send Message" button is clicked. Normally, submitting an HTML form makes the browser reload the whole page - the first thing this handler does is cancel that default behaviour, so the page stays exactly as it is. It then sends the current form state to the backend (`POST /api/contact`) as JSON, and updates the status based on whether that request succeeded or failed, which is what triggers the success/error message to appear.
+
+---
+
 ## Testing
 
 ### Manual Testing
@@ -43,6 +58,16 @@ Contact page at `/contact`:
 
 ![Screenshot of contact page route](./frontend/src/assets/readme_imgs/manual_testing/frontend_routing/contactpage_shows.png)
 
+
+**Contact Form Testing**
+
+Filled out the contact form in the browser and submitted it:
+
+![Screenshot of filled out contact form](./frontend/src/assets/readme_imgs/manual_testing/contact_form_testing/first_email_test.png)
+
+Confirmed in MongoDB Atlas's Data Explorer that the submission was actually saved, matching what was typed into the form:
+
+![Screenshot of saved contact form document in MongoDB](./frontend/src/assets/readme_imgs/manual_testing/contact_form_testing/mongo_db_success.png)
 
 
 #### Post Man
