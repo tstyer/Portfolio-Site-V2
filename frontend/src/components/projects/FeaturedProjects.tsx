@@ -4,8 +4,8 @@ interface Project {
     _id: string;
     title: string;
     subTitle: string;
-    description: String,
-    image: String,
+    description: string,
+    image: string,
     techTags: string[];
     githubLink: string;
 }
@@ -48,7 +48,7 @@ export function FeaturedProjects() {
                                 href={project.githubLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-text text-xs font-bold tracking-wide mt-4 inline-block transition-colors hover:text-blue-500"
+                                className="font-text text-xs font-bold tracking-wide mt-auto inline-block transition-colors hover:text-blue-500"
                             >
                                 VIEW GITHUB ↗
                             </a>

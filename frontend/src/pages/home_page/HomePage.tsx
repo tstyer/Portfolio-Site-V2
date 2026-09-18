@@ -5,10 +5,14 @@ import { Footer } from "../../components/footer/Footer";
 import { AboutMe } from "../../components/about/AboutMe";
 import { Skills } from "../../components/skills/Skills";
 import { FeaturedProjects } from "../../components/projects/FeaturedProjects";
+import { useRef } from "react";
 
 export function HomePage() {
+
+    const projectsRef = useRef<HTMLDivElement>(null);
+
     return(
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
 
             <NavBar />
 
@@ -26,7 +30,10 @@ export function HomePage() {
                         <Link to={"/contact"} className="px-6 py-2 md:px-8 md:py-3 font-medium border border-solid border-emerald-100 bg-[#D6D3CC] transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                             Let's Chat
                         </Link>
-                        <button className="px-6 py-2 md:px-8 md:py-3 font-medium border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                        <button className="px-6 py-2 md:px-8 md:py-3 font-medium border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer"
+                                onClick={() => {
+                                    projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
+                                }}>
                             View Work
                         </button>
                     </div>
@@ -40,8 +47,12 @@ export function HomePage() {
            <AboutMe />
 
            <Skills />
-
-           <FeaturedProjects />
+            <div ref={projectsRef}>
+                
+                <FeaturedProjects />
+            
+            </div>
+           
 
            <Footer />
 
