@@ -5,7 +5,8 @@ interface Blog {
     title: string,
     subTitle: string,
     shortDescription: string,
-    bodyText: string,  
+    bodyText: string,
+    substackLink: string,  
     image?: string, 
     slug?: string 
 }
@@ -34,8 +35,17 @@ export function Blogs() {
                             <p className="font-text bold text-xs text-amber-900/60">{blog.subTitle}</p>
                         </div>
 
-                        <div>
-
+                        <div className="p-5">
+                            <h3 className="font-heading font-bold text-lg">{blog.title}</h3>
+                            <p className='font-text text-xs text-amber-900/80 mt-2'>{blog.shortDescription}</p>
+                            <a
+                                href={blog.substackLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-text text-xs font-bold tracking-wide mt-auto inline-block transition-colors hover:text-blue-500"
+                            >
+                                VIEW BLOG ↗
+                            </a>
                         </div>
                     </div>
                 ))}

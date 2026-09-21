@@ -4,7 +4,7 @@ interface IBlogPost extends Document {
     title: string,
     subTitle: string,
     shortDescription: string,
-    bodyText: string,  
+    substackLink: string,  
     image?: string, 
     slug?: string // slug is included as the blog page will feature many blogs which then link to their own individual page when clicked
 } 
@@ -14,7 +14,7 @@ const blogPostSchema = new Schema<IBlogPost>({
     title: {type: String, required: true},
     subTitle: {type: String, required: true},
     shortDescription: {type: String, required: true},
-    bodyText: {type: String, required: true},
+    substackLink: {type: String, required: true, trim: true},
     image: {type: String, required: false},
     slug: {type: String, required: true, lowercase: true, trim: true, unique: true},
 })
