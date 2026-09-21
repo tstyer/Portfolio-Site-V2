@@ -12,6 +12,7 @@ export function HomePage() {
     const projectsRef = useRef<HTMLDivElement>(null);
 
     return(
+   
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
 
             <NavBar />
@@ -57,5 +58,7 @@ export function HomePage() {
            <Footer />
 
         </div>
+
+  
     )
 }

@@ -9,8 +9,8 @@ export function AboutMe() {
                 <div className="flex-1">
                     <p className="font-text text-sm sm:text-base leading-relaxed text-amber-900/80">
                         I specialize in combining the fast-paced development of the MongoDB, Express, React, and Node
-                        stack with strict cloud architectural guidelines. Over the last 5+ years, I have helped startups
-                        and enterprise teams architect pipelines, secure Kubernetes clusters, and build reactive dashboards.
+                        stack with strict cloud architectural guidelines. Over the last 2+ years, I have helped startups
+                        and volunteered as a product design engineer, building reactive dashboards.
                     </p>
                     <p className="font-text text-sm sm:text-base leading-relaxed text-amber-900/80 mt-4">
                         With a background rooted firmly in both application code and systems engineering, I bridge the
@@ -19,15 +19,15 @@ export function AboutMe() {
 
                     <div className="flex gap-8 sm:gap-12 mt-8">
                         <div>
-                            <p className="font-heading font-bold text-3xl sm:text-4xl">5+</p>
+                            <p className="font-heading font-bold text-3xl sm:text-4xl">2+</p>
                             <p className="font-text text-xs text-amber-900/70 tracking-wide mt-1">YEARS EXPERIENCE</p>
                         </div>
                         <div>
-                            <p className="font-heading font-bold text-3xl sm:text-4xl">40+</p>
+                            <p className="font-heading font-bold text-3xl sm:text-4xl">20+</p>
                             <p className="font-text text-xs text-amber-900/70 tracking-wide mt-1">PROJECTS COMPLETED</p>
                         </div>
                         <div>
-                            <p className="font-heading font-bold text-3xl sm:text-4xl">15+</p>
+                            <p className="font-heading font-bold text-3xl sm:text-4xl">2+</p>
                             <p className="font-text text-xs text-amber-900/70 tracking-wide mt-1">CLOUD DEPLOYMENTS</p>
                         </div>
                     </div>

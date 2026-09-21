@@ -20,3 +20,30 @@ body {
 button {
   background-color: #D6D3CC;
 }
+
+/* Soft shadow down the far left and right edges of the screen, fading inward.
+   - position: fixed + inset: 0 pins it to the viewport, so it stays put as the page scrolls.
+   - pointer-events: none stops it swallowing clicks on anything underneath it.
+   - The negative spread (the 4th value) is the trick that keeps each shadow on its
+     own edge instead of bleeding around the top and bottom corners.
+   Hidden below md (768px), where there is no spare width to give up. */
+@media (min-width: 768px) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+
+    /* How far the shadow reaches in. Raise or lower this one value to taste. */
+    --edge-reach: 135px;
+
+    /* Sky blue (Tailwind sky-400). A pale colour reads weaker than black over the
+       cream background, so the alpha is higher than it was for the black version. */
+    --edge-color: rgba(56, 189, 248, 0.45);
+
+    box-shadow:
+      inset var(--edge-reach) 0 var(--edge-reach) calc(var(--edge-reach) * -1) var(--edge-color),
+      inset calc(var(--edge-reach) * -1) 0 var(--edge-reach) calc(var(--edge-reach) * -1) var(--edge-color);
+  }
+}
