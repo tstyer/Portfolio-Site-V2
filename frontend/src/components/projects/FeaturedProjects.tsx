@@ -18,7 +18,7 @@ export function FeaturedProjects() {
             .then((res) => res.json())
             .then((data) => setProjects(data))
             .catch((err) => console.error('Error fetching projects:', err));
-    }, []);
+    }, []); // empty array used to run once - only need to fetch the projects once. 
 
     return (
         <section className="pt-16 md:pt-24">

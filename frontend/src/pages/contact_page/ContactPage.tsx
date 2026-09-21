@@ -22,7 +22,10 @@ const emptyForm: Contact = {
 
 export function ContactPage() {
 
+    // by default, set to emptyForm, where the rule is that is must match <Contact>
     const [contactForm, setContactForm] = useState<Contact>(emptyForm);
+
+    // Rules are in arrow brackets - can be either of these options
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,10 +34,11 @@ export function ContactPage() {
     }
 
     const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
-        e.preventDefault();
+        e.preventDefault(); // preventDefault stops the webpage from doing a hard refresh
         setStatus('submitting');
 
         try {
+            // first tries to post the contact data
             const res = await fetch('http://localhost:5000/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
