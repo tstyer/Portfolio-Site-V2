@@ -40,7 +40,7 @@ export function HomePage() {
                 </div>
 
                 <div className="shrink-0">
-                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-48 md:h-52 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
+                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-58 md:h-62 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
                 </div>
             </div>
 
