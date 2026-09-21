@@ -13,9 +13,9 @@ export function NavBar() {
 
             {/* Desktop links - hidden below the sm breakpoint, visible from sm up */}
             <nav className='hidden sm:flex gap-6 md:gap-12 font-heading'>
-                <Link to={"/"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>HOME</Link>
-                <Link to={"/blog"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>BLOG</Link>
-                <Link to={"/contact"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>CONTACT</Link>
+                <Link to={"/"} className='tracking-wide text-bold text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50 font-bold'>Home</Link>
+                <Link to={"/blog"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50 font-bold'>Blog</Link>
+                <Link to={"/contact"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50 font-bold'>Contact</Link>
             </nav>
 
             {/* Burger button - visible below sm, hidden from sm up */}
