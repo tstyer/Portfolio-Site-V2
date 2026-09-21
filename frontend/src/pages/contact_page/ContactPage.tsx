@@ -62,20 +62,25 @@ export function ContactPage() {
     const labelClasses = "font-text text-xs text-amber-900/70 tracking-wide mb-1 block";
 
     return(
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
+        // min-h-screen + flex-1 on <main> holds the footer at the bottom of the
+        // viewport even when the page is shorter than the screen
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 min-h-screen flex flex-col">
 
             <NavBar />
 
-        <div className="flex flex-col justify-between gap-8 pt-8 md:pt-16">
-            <div className="px-3 py-2">
+        <main className="flex-1">
+
+        <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 pt-8 md:pt-16">
+
+            <div className="flex flex-col flex-1 min-w-0 gap-6 md:gap-10">
+
+              <div className="px-3 py-2">
                 <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">How can I help?</h1>
-            </div>
+              </div>
 
-            <TypingChat />
+              <div className="bg-[#D6D3CC] border border-solid border-emerald-100 rounded-lg p-6 md:p-8 w-full">
 
-            <div className="bg-[#D6D3CC] border border-solid border-emerald-100 rounded-lg p-6 md:p-8 max-w-2xl">
-
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <div className="flex-1">
@@ -165,9 +170,14 @@ export function ContactPage() {
                     )}
                 </form>
 
+              </div>
             </div>
+
+            <TypingChat />
+
         </div>
 
+        </main>
 
             <Footer />
         </div>

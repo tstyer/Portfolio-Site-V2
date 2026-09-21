@@ -69,15 +69,15 @@ export function TypingChat() {
 
             {/* min-h reserves room for both bubbles so the page doesn't jump
                 as the second message appears */}
-            <div aria-hidden="true" className="flex flex-col gap-4 min-h-[200px]">
+            <div aria-hidden="true" className="flex flex-col justify-center gap-4 min-h-50">
                 {visible.map((msg, i) => (
                     <div
                         key={i}
                         className={`max-w-[85%] ${msg.from === 'visitor' ? 'self-start' : 'self-end'}`}
                     >
-                        <p className="font-text text-xs text-amber-900/60 mb-1 px-1">
-                            {msg.from === 'visitor' ? 'Them' : 'Travis'}
-                        </p>
+                        {msg.from === 'travis' && (
+                            <p className="font-text text-xs text-amber-900/60 mb-1 px-1">Travis</p>
+                        )}
                         <div
                             className={`border border-solid border-emerald-100 rounded-lg px-4 py-3 shadow-[3px_3px_0px_black] ${
                                 msg.from === 'visitor' ? 'bg-[#D6D3CC]' : 'bg-[#f1eee6]'
