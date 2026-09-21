@@ -5,7 +5,6 @@ interface Blog {
     title: string,
     subTitle: string,
     shortDescription: string,
-    bodyText: string,
     substackLink: string,  
     image?: string, 
     slug?: string 

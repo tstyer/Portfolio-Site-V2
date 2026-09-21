@@ -27,6 +27,75 @@ It is set up to be vague so that those sending requests cannot see any potential
 
 ---
 
+## Managing Site Content (Blogs & Projects)
+
+### Where the content actually lives
+
+The blogs and projects shown on the site are stored in **MongoDB**, not in files. The files under `backend/data/` are the *source of truth in git* - the seed script reads them and pushes their contents into the database.
+
+```
+backend/
+  data/
+    blogs.ts      <- the list of blog posts (edit this to publish)
+    projects.ts   <- the list of projects
+  seed.ts         <- the loader that pushes ./data into MongoDB
+```
+
+Data and logic are kept apart on purpose: `data/` holds content I change often, and `seed.ts` holds loading logic I rarely touch.
+
+### Blog posts don't store article text
+
+Blog articles are written and hosted on **Substack**, so the database never stores the article body. Each blog record is just the card shown on the site plus a `substackLink` out to the full post, which the card's "VIEW BLOG" link uses.
+
+This also avoids splitting search-engine ranking signals across two copies of the same article - Substack keeps the canonical version.
+
+### Publishing a new blog post
+
+1. Add an object to the `blogs` array in `backend/data/blogs.ts`, including a hand-written `slug`.
+2. Run the seed script:
+   ```bash
+   cd backend
+   npm run seed
+   ```
+3. Commit the change - the content is version-controlled and reviewable in git alongside the code.
+
+Adding a project works the same way, via `backend/data/projects.ts`.
+
+### Why the script updates instead of wiping
+
+The first version of `seed.ts` called `deleteMany({})` and recreated everything on every run. That was fine for placeholder data, but it had two problems once the content became real:
+
+- Pointing `MONGODB_URI` at the live database and running the script would **delete all real content** before rewriting it.
+- Every document got a brand-new `_id` on each run, so nothing could reliably reference a blog or project.
+
+The script now **upserts** each record instead, matching on `slug`:
+
+```ts
+await model.findOneAndUpdate(
+    { slug: item.slug },
+    { $set: item },
+    { upsert: true, new: true, runValidators: true, setDefaultsOnInsert: true }
+);
+```
+
+If a record with that slug exists it's updated in place; if it doesn't, it's inserted. Adding one new blog post therefore inserts only that post and leaves everything else untouched, and the script is safe to run repeatedly.
+
+The original wipe-and-rebuild behaviour is still available behind an explicit flag, for resetting a local database:
+
+```bash
+npm run seed -- --fresh
+```
+
+**Only use `--fresh` against a local/development database.** Against the live one it deletes the real content first.
+
+### Why slugs are written by hand
+
+Both models have a `pre("validate")` hook that generates a slug from the title. That hook is *document* middleware, but `findOneAndUpdate` is *query* middleware - so the hook **does not run during an upsert** and slugs are never auto-generated there.
+
+Writing the slug by hand in `data/` is also safer than deriving it from the title. An auto-derived slug changes whenever the title is reworded, which would make the upsert match nothing and silently insert a **duplicate** record instead of updating the original. A hand-written slug is a stable identity that survives title edits.
+
+---
+
 ## Testing
 
 ### Manual Testing
@@ -135,6 +204,8 @@ With the server running (`npm run dev`), each endpoint was tested individually i
 ### Creating Seed Data
 
 The GET routes for projects and blogs only ever returned empty arrays, since no real content existed yet. To have realistic data to build and test the frontend against, I wrote a `seed.ts` script that connects to the database directly, clears out any existing projects/blogs, and inserts a set of sample documents.
+
+> **Note:** `seed.ts` has since been reworked. It no longer wipes the collections by default - it now reads from `backend/data/` and upserts each record on its `slug`. See [Managing Site Content](#managing-site-content-blogs--projects) above.
 
 Running the script successfully in the terminal:
 
