@@ -36,7 +36,7 @@ button {
     pointer-events: none;
 
     /* How far the shadow reaches in. Raise or lower this one value to taste. */
-    --edge-reach: 135px;
+    --edge-reach: 220px;
 
     /* Sky blue (Tailwind sky-400). A pale colour reads weaker than black over the
        cream background, so the alpha is higher than it was for the black version. */
@@ -45,5 +45,22 @@ button {
     box-shadow:
       inset var(--edge-reach) 0 var(--edge-reach) calc(var(--edge-reach) * -1) var(--edge-color),
       inset calc(var(--edge-reach) * -1) 0 var(--edge-reach) calc(var(--edge-reach) * -1) var(--edge-color);
+  }
+}
+
+/* Blinking caret for the typing animation on the contact page.
+   steps(1) makes it snap on and off like a real text cursor, rather than fading. */
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-caret {
+    animation: none;
   }
 }

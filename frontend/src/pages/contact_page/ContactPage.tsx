@@ -1,5 +1,6 @@
 import { NavBar } from "../../components/nav_bar/Navbar"
 import { Footer } from "../../components/footer/Footer"
+import { TypingChat } from "../../components/typing_chat/TypingChat"
 import { useState, type ChangeEvent, type SubmitEvent } from "react"
 
 interface Contact {
@@ -67,8 +68,10 @@ export function ContactPage() {
 
         <div className="flex flex-col justify-between gap-8 pt-8 md:pt-16">
             <div className="px-3 py-2">
-                <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Ask me anything</h1>
+                <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">How can I help?</h1>
             </div>
+
+            <TypingChat />
 
             <div className="bg-[#D6D3CC] border border-solid border-emerald-100 rounded-lg p-6 md:p-8 max-w-2xl">
 
