@@ -21,7 +21,7 @@ export function HomePage() {
             <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-0 pt-8 md:pt-16">
                 <div>
                     <div className="px-3 py-2">
-                        <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Full-Stack <span className="italic">Developer</span>. <br />SEO <span className="italic">Engineer.</span> <br /><span className="italic">Copywriter.</span></h1>
+                        <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Full-Stack <span className="italic text-glow">Developer</span>. <br />SEO <span className="italic text-glow">Engineer.</span> <br /><span className="italic text-glow">Copywriter.</span></h1>
                         <h2 className="font-text text-sm sm:text-base md:text-lg pt-2 md:pt-4 max-w-2xl">With Website Design, Full-Stack Development, SEO implementation and ethical copywriting,
                         I'll present your business that leads to more customers.
                         </h2>
