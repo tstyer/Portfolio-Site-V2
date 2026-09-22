@@ -1,6 +1,7 @@
 import { NavBar } from "../../components/nav_bar/Navbar"
 import { Footer } from "../../components/footer/Footer"
 import { TypingChat } from "../../components/typing_chat/TypingChat"
+import { ServicesTabs } from "../../components/services_tabs/ServicesTabs"
 import { useState, type ChangeEvent, type SubmitEvent } from "react"
 
 interface Contact {
@@ -176,6 +177,8 @@ export function ContactPage() {
             <TypingChat />
 
         </div>
+
+        <ServicesTabs />
 
         </main>
 
