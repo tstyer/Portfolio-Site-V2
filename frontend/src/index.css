@@ -65,12 +65,21 @@ button {
   }
 }
 
-/* Blue glow behind the italic words in the homepage heading, matching the one
-   on the headshot (shadow-lg + shadow-blue-500/50 - blue-500 is rgb(59 130 246)).
-   Two shadows: a tighter core and a wider soft bloom, both biased slightly
-   downward like the image's shadow rather than sitting dead centre. */
-.text-glow {
+/* Glows behind the words in the homepage heading. Two shadows each - a tighter
+   core and a wider soft bloom - biased slightly downward like the headshot's
+   shadow rather than sitting dead centre.
+
+   Blue matches the glow on the headshot (shadow-blue-500/50, rgb(59 130 246)).
+   Amber (amber-500, rgb(245 158 11)) uses the same geometry and alphas so the
+   two read as a matched pair. */
+.text-glow-blue {
   text-shadow:
     0 2px 6px rgba(59, 130, 246, 0.28),
     0 6px 18px rgba(59, 130, 246, 0.2);
+}
+
+.text-glow-amber {
+  text-shadow:
+    0 2px 6px rgba(245, 158, 11, 0.28),
+    0 6px 18px rgba(245, 158, 11, 0.2);
 }
