@@ -63,7 +63,7 @@ export function ServicesTabs() {
         <section className="pt-16 md:pt-24">
 
             <p className="font-text text-xs sm:text-sm text-amber-900/70 tracking-wide">// SERVICES</p>
-            <h2 className="font-heading text-3xl mt-2">What I can do for you...</h2>
+            <h2 className="font-heading font-bold text-2xl mt-2">What I can do for you...</h2>
             <div className="border-t border-black/10 mt-6 mb-8 md:mb-10" />
 
             <div role="tablist" aria-label="Services" className="flex flex-wrap gap-3">

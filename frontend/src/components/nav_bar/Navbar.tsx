@@ -31,10 +31,10 @@ export function NavBar() {
 
             {/* Mobile dropdown - only rendered while isOpen is true */}
             {isOpen && (
-                <nav className='absolute top-full left-0 w-full flex flex-col gap-4 bg-[#f1eee6] border border-black p-4 sm:hidden font-heading'>
-                    <Link to={"/"} onClick={() => setIsOpen(false)} className='tracking-wide text-sm inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>HOME</Link>
-                    <Link to={"/blog"} onClick={() => setIsOpen(false)} className='tracking-wide text-sm inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>BLOG</Link>
-                    <Link to={"/contact"} onClick={() => setIsOpen(false)} className='tracking-wide text-sm inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>CONTACT</Link>
+                <nav className='absolute top-full left-0 w-full flex flex-col items-end gap-4 bg-[#f1eee6] px-2 py-4 sm:hidden font-heading'>
+                    <Link to={"/"} onClick={() => setIsOpen(false)} className='tracking-wide text-sm inline-block w-1/2 px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>HOME</Link>
+                    <Link to={"/blog"} onClick={() => setIsOpen(false)} className='tracking-wide text-sm inline-block w-1/2 px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>BLOG</Link>
+                    <Link to={"/contact"} onClick={() => setIsOpen(false)} className='tracking-wide text-sm inline-block w-1/2 px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50'>CONTACT</Link>
                 </nav>
             )}
         </div>
