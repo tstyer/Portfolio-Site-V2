@@ -28,7 +28,7 @@ export function FeaturedProjects() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {projects.map((project) => (
-                    <div key={project._id} className="border border-solid border-emerald-100 rounded-lg overflow-hidden bg-[#D6D3CC]/40 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]">
+                    <div key={project._id} className="border border-solid border-emerald-100 rounded-lg overflow-hidden bg-blue-100/70 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]">
                         <div className="h-48 bg-[#D6D3CC] flex items-center justify-center"
                             style={{ backgroundImage: `url(${project.image})` }}>
                             <p className="font-text text-xs text-amber-900/60">{project.title}</p>

@@ -26,7 +26,7 @@ export function Skills() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {skillCategories.map((category) => (
-                    <div key={category.title} className="bg-[#D6D3CC] border border-solid border-emerald-100 rounded-lg p-5 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]">
+                    <div key={category.title} className="bg-blue-100/70 border border-solid border-emerald-100 rounded-lg p-5 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]">
                         <h3 className="font-heading font-bold text-lg mb-4">{category.title}</h3>
                         <div className="flex flex-wrap gap-2">
                             {category.skills.map((skill) => (

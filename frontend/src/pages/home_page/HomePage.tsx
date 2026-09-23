@@ -26,11 +26,11 @@ export function HomePage() {
                         </h2>
                     </div>
 
-                    <div className="flex font-text text-xs sm:text-sm md:text-base mt-3 mx-2 gap-3 sm:gap-3 md:gap-6">
-                        <Link to={"/contact"} className="px-6 py-2 md:px-8 md:py-3 font-medium border border-solid border-emerald-100 bg-[#D6D3CC] transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                    <div className="flex font-text text-xs sm:text-sm md:text-base mt-3 gap-3 sm:gap-3 md:gap-6">
+                        <Link to={"/contact"} className="px-6 py-2 md:px-8 md:py-3 font-medium bg-blue-100/70 border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                             Let's Chat
                         </Link>
-                        <button className="px-6 py-2 md:px-8 md:py-3 font-medium border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer"
+                        <button className="px-6 py-2 md:px-8 md:py-3 font-medium bg-blue-100/70 border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer"
                                 onClick={() => {
                                     projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
                                 }}>

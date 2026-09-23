@@ -17,8 +17,14 @@ body {
   --font-text: 'Anonymous Pro', sans;
 }
 
-button {
-  background-color: #D6D3CC;
+/* Default background for buttons that don't set their own.
+   This MUST stay inside @layer base: an unlayered rule outranks every Tailwind
+   utility (unlayered CSS beats layered CSS in the cascade, whatever the
+   specificity), which silently overrode every bg-* class on every <button>. */
+@layer base {
+  button {
+    background-color: #D6D3CC;
+  }
 }
 
 /* Soft shadow down the far left and right edges of the screen, fading inward.
