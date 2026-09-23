@@ -20,10 +20,9 @@ export function HomePage() {
             {/* Hero */}
             <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-0 pt-8 md:pt-16">
                 <div>
-                    <div className="px-3 py-2">
-                        <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"><span className="text-glow-amber">Full-Stack</span> <span className="italic text-glow-blue">Developer</span>. <br /><span className="text-glow-amber">SEO</span> <span className="italic text-glow-blue">Copywriter.</span></h1>
-                        <h2 className="font-text text-sm sm:text-base md:text-lg pt-2 md:pt-4 max-w-2xl">With Website Design, Full-Stack Development, SEO implementation and ethical copywriting,
-                        I'll present your business that leads to more customers.
+                    <div className="py-2">
+                        <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"><span className="text-glow-blue">Product Design Engineer</span></h1>
+                        <h2 className="font-text text-sm sm:text-base md:text-lg pt-2 md:pt-4 max-w-2xl">I build end-to-end digital solutions that drive results. Whether you need a custom app, a new website, or strategic marketing, let's chat about your goals.
                         </h2>
                     </div>
 
@@ -42,7 +41,7 @@ export function HomePage() {
 
                 {/* flex-1 claims all the space left over beside the text, and
                     justify-center puts the image in the middle of it */}
-                <div className="flex justify-center md:flex-1">
+                <div className="flex justify-center md:flex-1 px-3">
                     <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-58 md:h-62 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
                 </div>
             </div>

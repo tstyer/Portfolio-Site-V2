@@ -2,7 +2,7 @@ export function AboutMe() {
     return (
         <section className="pt-16 md:pt-24">
             <p className="font-text text-xs sm:text-sm text-amber-900/70 tracking-wide">// WHO I AM</p>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mt-2">About Me</h2>
+            <h2 className="font-heading font-bold text-3xl mt-2">About Me</h2>
             <div className="border-t border-black/10 mt-6 mb-10 md:mb-12" />
 
             <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-16">

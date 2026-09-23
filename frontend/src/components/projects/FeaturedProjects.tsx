@@ -23,7 +23,7 @@ export function FeaturedProjects() {
     return (
         <section className="pt-16 md:pt-24">
             <p className="font-text text-xs sm:text-sm text-amber-900/70 tracking-wide">// MY ARTIFACTS</p>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mt-2">Featured Projects</h2>
+            <h2 className="font-heading font-bold text-3xl mt-2">Featured Projects</h2>
             <div className="border-t border-black/10 mt-6 mb-10 md:mb-12" />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -21,7 +21,7 @@ export function Skills() {
     return (
         <section className="pt-16 md:pt-24">
             <p className="font-text text-xs sm:text-sm text-amber-900/70 tracking-wide">// CAPABILITY MATRIX</p>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mt-2">Skills &amp; Technologies</h2>
+            <h2 className="font-heading font-bold text-3xl mt-2">Skills &amp; Technologies</h2>
             <div className="border-t border-black/10 mt-6 mb-10 md:mb-12" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
