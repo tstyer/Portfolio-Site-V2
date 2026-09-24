@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 export function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
+    // One shared class list, so the three pills are identical. w-28 is what makes
+    // them equal width whatever the label says; text-center keeps the shorter
+    // labels sitting in the middle of that space.
+    const navLink = 'inline-block w-26 text-center px-4 py-3 rounded-md tracking-wide text-sm md:text-base font-bold transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50';
+
     return (
         <div className='relative flex w-full h-auto justify-between items-center'>
 
@@ -13,9 +18,11 @@ export function NavBar() {
 
             {/* Desktop links - hidden below the sm breakpoint, visible from sm up */}
             <nav className='hidden sm:flex gap-6 md:gap-12 font-heading'>
-                <Link to={"/"} className='tracking-wide text-bold text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50 font-bold'>Home</Link>
-                <Link to={"/blog"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50 font-bold'>Blog</Link>
-                <Link to={"/contact"} className='tracking-wide text-sm md:text-base inline-block px-2 py-1 rounded-md transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50 font-bold'>Contact</Link>
+
+                <Link to={"/"} className={navLink}>Home</Link>
+                <Link to={"/blog"} className={navLink}>Blog</Link>
+                <Link to={"/contact"} className={navLink}>Contact</Link>
+
             </nav>
 
             {/* Burger button - visible below sm, hidden from sm up */}

@@ -41,7 +41,7 @@ export function HomePage() {
 
                 {/* flex-1 claims all the space left over beside the text, and
                     justify-center puts the image in the middle of it */}
-                <div className="flex justify-center md:flex-1 px-3">
+                <div className="flex justify-center md:flex-1 px-3 pt-3">
                     <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-65 md:h-72 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
                 </div>
             </div>
