@@ -27,10 +27,10 @@ export function HomePage() {
                     </div>
 
                     <div className="flex font-text text-xs sm:text-sm md:text-base mt-3 gap-3 sm:gap-3 md:gap-6">
-                        <Link to={"/contact"} className="px-6 py-2 md:px-8 md:py-3 font-medium bg-blue-100/70 border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                        <Link to={"/contact"} className="px-6 py-2 md:px-8 md:py-3 font-bold bg-blue-100/70 border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                             Let's Chat
                         </Link>
-                        <button className="px-6 py-2 md:px-8 md:py-3 font-medium bg-blue-100/70 border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer"
+                        <button className="px-6 py-2 md:px-8 md:py-3 font-bold bg-blue-100/70 border border-solid border-emerald-100 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer"
                                 onClick={() => {
                                     projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
                                 }}>
@@ -42,7 +42,7 @@ export function HomePage() {
                 {/* flex-1 claims all the space left over beside the text, and
                     justify-center puts the image in the middle of it */}
                 <div className="flex justify-center md:flex-1 px-3">
-                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-58 md:h-62 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
+                    <img src={portfolio_headshot} alt="Image of Travis" className="w-0 h-0 md:w-65 md:h-72 rounded-lg object-cover object-top mix-blend-multiply transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50"/>
                 </div>
             </div>
 

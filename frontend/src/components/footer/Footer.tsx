@@ -5,10 +5,10 @@ export function Footer() {
         <footer className='flex flex-col sm:flex-row w-full justify-between items-center gap-4 py-8 mt-12 border-t border-black/10'>
             <div className='flex flex-row gap-2 font-text text-xs'>
                 {/* Other Links */}
-                <Link to={"/"} className="px-3 py-1 font-medium border border-solid border-emerald-100 bg-[#D6D3CC] transition-all shadow-[2px_2px_0px_black] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                <Link to={"/"} className="px-3 py-1 font-bold border border-solid border-emerald-100 bg-[#D6D3CC] transition-all shadow-[2px_2px_0px_black] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                     Travis.
                 </Link>
-                <Link to={"/contact"} className="px-3 py-1 font-medium border border-solid border-emerald-100 bg-[#D6D3CC] transition-all shadow-[2px_2px_0px_black] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                <Link to={"/contact"} className="px-3 py-1 font-bold border border-solid border-emerald-100 bg-[#D6D3CC] transition-all shadow-[2px_2px_0px_black] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                     Let's Chat.
                 </Link>
             </div>
