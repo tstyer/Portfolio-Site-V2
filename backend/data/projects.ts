@@ -19,7 +19,7 @@ export const projects: ProjectSeed[] = [
         title: "Noter",
         subTitle: "A web app built with React.js, Node.js and TypeScript, with data held on MongoDB.",
         description: "A full-stack website that allows a user to create, read, update and delete notes. This is open to everyone without a login as a simple project.",
-        image: "frontend/public/note_app_screenshot.png",
+        image: "/note_app_screenshot.png",
         techTags: ["React", "Node.js", "MongoDB", "TypeScript"],
         githubLink: "https://github.com/tstyer/MERN-Note-Taking-App",
         deployedLink: "https://mern-note-taking-app-wjbi.onrender.com/",

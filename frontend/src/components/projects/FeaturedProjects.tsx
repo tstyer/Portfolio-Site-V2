@@ -8,10 +8,14 @@ interface Project {
     image: string,
     techTags: string[];
     githubLink: string;
+    deployedLink?: string; // optional in the schema, so not every project has one
 }
 
 export function FeaturedProjects() {
     const [projects, setProjects] = useState<Project[]>([]);
+
+    // Shared by the GitHub and Deployed Site links so the pair stay identical.
+    const projectLink = "font-text text-xs font-bold tracking-wide inline-block transition-colors hover:text-blue-500";
 
     useEffect(() => {
         fetch('http://localhost:5000/api/projects')
@@ -29,9 +33,11 @@ export function FeaturedProjects() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {projects.map((project) => (
                     <div key={project._id} className="border border-solid border-emerald-100 rounded-lg overflow-hidden bg-blue-100/70 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]">
-                        <div className="h-48 bg-[#D6D3CC] flex items-center justify-center"
+                        {/* bg-contain scales the whole screenshot to fit inside the panel
+                            instead of showing it at full size and cropping. bg-no-repeat is
+                            needed with contain, or the spare space tiles the image again. */}
+                        <div className="h-48 bg-[#D6D3CC] bg-contain bg-center bg-no-repeat"
                             style={{ backgroundImage: `url(${project.image})` }}>
-                            <p className="font-text text-xs text-amber-900/60">{project.title}</p>
                         </div>
                         <div className="p-5">
                             <h3 className="font-heading font-bold text-lg">{project.title}</h3>
@@ -44,14 +50,28 @@ export function FeaturedProjects() {
                                     </span>
                                 ))}
                             </div>
-                            <a
-                                href={project.githubLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-text text-xs font-bold tracking-wide mt-auto inline-block transition-colors hover:text-blue-500"
-                            >
-                                VIEW GITHUB ↗
-                            </a>
+                            <div className="flex flex-wrap gap-4 pt-4">
+                                <a
+                                    href={project.githubLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={projectLink}
+                                >
+                                    VIEW GITHUB ↗
+                                </a>
+
+                                {/* deployedLink is optional, so only render it when there is one */}
+                                {project.deployedLink && (
+                                    <a
+                                        href={project.deployedLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={projectLink}
+                                    >
+                                        DEPLOYED SITE ↗
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </div>
                 ))}
