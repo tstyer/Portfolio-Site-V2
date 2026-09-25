@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-website-v2",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Runs the frontend and backend together, so development is one command on one URL.",
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "seed": "npm --prefix backend run seed",
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

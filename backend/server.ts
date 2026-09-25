@@ -4,6 +4,9 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import path from 'node:path';
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 // Routes Imports:
 import projectRouter from './routes/projectRoutes.js'
@@ -39,9 +42,29 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-app.get("/", (req, res) => {
-  res.send("API is running");
-});
+/* ----- SERVE THE BUILT FRONTEND FROM THIS SAME SERVER -----
+   One Render service hosts both, so the React app and the API share an origin.
+   That is what lets the frontend call "/api/blogs" instead of a separate host,
+   and why no CORS configuration is needed in production. */
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const frontendDist = path.resolve(__dirname, '../frontend/dist');
+
+// Only mounted when a build exists. In development you use the Vite dev server
+// instead (it proxies /api here), and frontend/dist may be missing or stale.
+if (existsSync(frontendDist)) {
+  // Serves index.html, /assets/* and anything from frontend/public.
+  app.use(express.static(frontendDist));
+
+  // SPA fallback. A hard refresh on /blog asks the server for /blog, which is not
+  // a real file - React Router owns that path, so hand back index.html and let the
+  // app route it. Written as plain middleware because Express 5 changed the
+  // wildcard route syntax and app.get('*') now throws.
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' || req.path.startsWith('/api/')) return next();
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  });
+}
 
 app.use(errorHandler)
 // global error handler goes below all other routes - deliberately vague

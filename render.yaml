@@ -1,0 +1,24 @@
+# Render Blueprint - one web service serving BOTH the API and the built React app,
+# so the whole site lives on a single URL and the frontend can call /api/... directly.
+#
+# Use it via Render's "New +" > "Blueprint", or just copy buildCommand and
+# startCommand into a Web Service created by hand in the dashboard.
+services:
+  - type: web
+    name: portfolio-site-v2
+    runtime: node
+    plan: free
+
+    # Build the React app first (backend/server.ts serves frontend/dist),
+    # then install the server's own dependencies.
+    buildCommand: npm --prefix frontend ci && npm --prefix frontend run build && npm --prefix backend ci
+    startCommand: npm --prefix backend start
+
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+
+      # sync: false means Render prompts for this in the dashboard instead of
+      # reading it from here - the connection string must never be committed.
+      - key: MONGODB_URI
+        sync: false

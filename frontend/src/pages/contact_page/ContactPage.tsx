@@ -41,7 +41,7 @@ export function ContactPage() {
 
         try {
             // first tries to post the contact data
-            const res = await fetch('http://localhost:5000/api/contact', {
+            const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(contactForm),

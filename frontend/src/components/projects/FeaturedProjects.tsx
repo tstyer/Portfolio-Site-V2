@@ -18,7 +18,7 @@ export function FeaturedProjects() {
     const projectLink = "font-text text-xs font-bold tracking-wide inline-block transition-colors hover:text-blue-500";
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/projects')
+        fetch('/api/projects')
             .then((res) => res.json())
             .then((data) => setProjects(data))
             .catch((err) => console.error('Error fetching projects:', err));

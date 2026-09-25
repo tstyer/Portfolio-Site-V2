@@ -18,7 +18,7 @@ export function Blogs() {
     const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/blogs')
+        fetch('/api/blogs')
         .then((res) => {
             if (!res.ok) {
                 throw new Error('Request failed'); // a 500 still resolves, so check res.ok

@@ -31,7 +31,12 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - run: npm ci
+
+      # Tells vite.config.ts to build with base '/Portfolio-Site-V2/', since Pages
+      # serves this repo from a subfolder rather than the domain root.
       - run: npm run build
+        env:
+          DEPLOY_TARGET: pages
 
       # GitHub Pages serves static files with no SPA rewrite, so loading
       # /Portfolio-Site-V2/blog directly would 404. Serving the same app as
