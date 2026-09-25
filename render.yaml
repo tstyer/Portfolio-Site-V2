@@ -9,9 +9,15 @@ services:
     runtime: node
     plan: free
 
-    # Build the React app first (backend/server.ts serves frontend/dist),
-    # then install the server's own dependencies.
-    buildCommand: npm --prefix frontend ci && npm --prefix frontend run build && npm --prefix backend ci
+    # Build the React app first (backend/server.ts serves frontend/dist), then
+    # install the server's own dependencies.
+    #
+    # --include=dev is required on the frontend install: Render sets
+    # NODE_ENV=production, which makes npm skip devDependencies, and vite plus
+    # typescript both live there. Without it the install succeeds and the build
+    # then dies on "vite: not found". The backend doesn't need it - tsx is a
+    # regular dependency precisely so it survives a production install.
+    buildCommand: npm --prefix frontend ci --include=dev && npm --prefix frontend run build && npm --prefix backend ci
     startCommand: npm --prefix backend start
 
     envVars:
