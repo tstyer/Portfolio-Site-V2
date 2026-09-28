@@ -7,7 +7,7 @@ export function AboutMe() {
             <h2 className="font-heading font-bold text-3xl mt-2">About Me</h2>
             <div className="border-t border-black/10 mt-6 mb-10 md:mb-12" />
 
-            <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-16">
+            <div className="flex flex-col md:flex-row-reverse md:items-center gap-10 md:gap-16">
                 <div className="flex-1">
                     <p className="font-text text-sm sm:text-base leading-relaxed text-amber-900/80">
                         As a self-taught full-stack developer with roots in copywriting and SEO, I bring a holistic perspective to product development. 
