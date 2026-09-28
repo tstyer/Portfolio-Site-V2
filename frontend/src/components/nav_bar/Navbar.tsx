@@ -18,7 +18,7 @@ export function NavBar() {
     // The current page: thicker, darker border, already pressed in. The colour has
     // to be darker than the fill to show at all - orange-100 was the same colour as
     // bg-orange-100/70, so it vanished into the button.
-    const pressed = 'border-2 border-amber-900/20 shadow-none translate-x-[3px] translate-y-[3px]';
+    const pressed = 'border-2 border-blue-100/70 shadow-none translate-x-[3px] translate-y-[3px]';
 
     // NavLink works isActive out from the current URL and hands it to this function,
     // so there is no state to keep in sync. That means it still shows the right pill

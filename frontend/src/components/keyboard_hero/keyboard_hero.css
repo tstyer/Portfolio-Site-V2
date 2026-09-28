@@ -1,0 +1,128 @@
+.keyboard-hero {
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+    border: 1px solid rgba(119, 107, 89, .12);
+    border-radius: 14px;
+    background: #eee9df;
+    box-shadow: 0 8px 16px -10px rgba(63, 53, 40, .38), 0 2px 4px rgba(63, 53, 40, .06);
+}
+
+.keyboard-hero__illustration {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.keyboard-hero__doodles {
+    color: #9a958b;
+}
+
+.keyboard-hero__key-base {
+    fill: #aba294;
+    stroke: #827a6e;
+    stroke-width: 1;
+}
+
+.keyboard-hero__key-top {
+    transform: translateY(0);
+    transition: transform 65ms ease-out;
+}
+
+.keyboard-hero__key-face {
+    fill: #f4f0e7;
+    stroke: #928a7d;
+    stroke-width: 1;
+    transition: fill 65ms ease-out, stroke 65ms ease-out;
+}
+
+.keyboard-hero__key--modifier .keyboard-hero__key-face {
+    fill: #dcd4c6;
+}
+
+.keyboard-hero__key-label {
+    fill: #6a6359;
+    font-family: 'Geist', sans-serif;
+    font-size: 7px;
+    font-weight: 500;
+}
+
+.keyboard-hero__key--pressed .keyboard-hero__key-top {
+    transform: translateY(4px);
+}
+
+.keyboard-hero__key--pressed .keyboard-hero__key-face {
+    fill: #bcd8e5;
+    stroke: #658493;
+}
+
+.keyboard-hero__typed-word {
+    fill: #494a43;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 18px;
+}
+
+.keyboard-hero__caret {
+    fill: #8e998c;
+    animation: keyboard-caret-blink 1s steps(1) infinite;
+}
+
+.keyboard-hero__caret--still {
+    animation: none;
+}
+
+.keyboard-hero__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 43px;
+    padding: 0 18px 12px;
+    color: #827b6f;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+.keyboard-hero__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 28px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: transparent;
+    color: #70695e;
+    font-size: 10px;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.keyboard-hero__toggle svg {
+    width: 11px;
+    height: 11px;
+}
+
+.keyboard-hero__toggle:hover {
+    background: #e1dbcf;
+}
+
+.keyboard-hero__toggle:focus-visible {
+    outline: 2px solid #658493;
+    outline-offset: 3px;
+}
+
+@keyframes keyboard-caret-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .keyboard-hero__key-top,
+    .keyboard-hero__key-face {
+        transition: none;
+    }
+
+    .keyboard-hero__caret {
+        animation: none;
+    }
+}

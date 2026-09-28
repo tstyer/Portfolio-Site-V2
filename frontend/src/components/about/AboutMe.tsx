@@ -35,7 +35,7 @@ export function AboutMe() {
                 </div>
 
                 <div className="flex-1 shrink-0 w-full">
-                    <div className="bg-[#D6D3CC] border border-solid border-emerald-100 rounded-lg h-64 md:h-80 flex items-center justify-center">
+                    <div className= "border border-solid border-emerald-100 rounded-lg h-64 md:h-80 flex items-center justify-center">
                         <img src={about_me_image} alt="Wireframe image of connected technology" className='rounded-lg object-cover object-top transition-shadow duration-300 shadow-lg shadow-black/40 hover:shadow-blue-500/50' />
                     </div>
                 </div>
