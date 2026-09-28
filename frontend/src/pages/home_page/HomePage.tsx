@@ -42,7 +42,7 @@ export function HomePage() {
                     </div>
                 </div>
 
-                <div className="flex justify-center w-full md:w-[36%] md:shrink-0">
+                <div className="hidden md:flex justify-center w-full md:w-[36%] md:shrink-0">
                     <KeyboardHero />
                 </div>
             </div>
