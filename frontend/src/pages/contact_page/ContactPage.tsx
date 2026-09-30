@@ -75,7 +75,7 @@ export function ContactPage() {
             <div className="flex flex-col min-w-0 gap-6 md:gap-10">
 
               <div className="px-3 py-2">
-                <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">How can I help?</h1>
+                <h2 className="mt-2 font-heading font-semibold text-2xl sm:text-3xl md:text-4xl"><span className="text-glow-blue">How can I help?</span></h2>
               </div>
 
               <div className="bg-[#D6D3CC] border border-solid border-emerald-100 rounded-lg p-6 md:p-8 w-full">
@@ -158,7 +158,7 @@ export function ContactPage() {
                     <button
                         type="submit"
                         disabled={status === 'submitting'}
-                        className="px-6 py-2 md:px-8 md:py-3 font-medium font-text text-sm border border-solid border-emerald-100 bg-[#f1eee6] transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed self-start">
+                        className="px-6 py-2 md:px-8 md:py-3 rounded-sm font-medium font-text text-sm border border-solid border-emerald-100 bg-[#f1eee6] transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed self-start">
                         {status === 'submitting' ? 'Sending...' : 'Send Message'}
                     </button>
 
