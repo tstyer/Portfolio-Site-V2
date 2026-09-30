@@ -1,6 +1,5 @@
 import { NavBar } from "../../components/nav_bar/Navbar"
 import { Footer } from "../../components/footer/Footer"
-import { TypingChat } from "../../components/typing_chat/TypingChat"
 import { ServicesTabs } from "../../components/services_tabs/ServicesTabs"
 import { useState, type ChangeEvent, type SubmitEvent } from "react"
 
@@ -71,9 +70,9 @@ export function ContactPage() {
 
         <main className="flex-1">
 
-        <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 pt-8 md:pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-12 pt-8 md:pt-16">
 
-            <div className="flex flex-col flex-1 min-w-0 gap-6 md:gap-10">
+            <div className="flex flex-col min-w-0 gap-6 md:gap-10">
 
               <div className="px-3 py-2">
                 <h1 className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">How can I help?</h1>
@@ -174,11 +173,9 @@ export function ContactPage() {
               </div>
             </div>
 
-            <TypingChat />
+            <ServicesTabs />
 
         </div>
-
-        <ServicesTabs />
 
         </main>
 

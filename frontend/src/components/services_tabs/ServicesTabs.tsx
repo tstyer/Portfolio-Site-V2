@@ -60,7 +60,7 @@ export function ServicesTabs() {
     const current = services[active];
 
     return (
-        <section className="pt-16 md:pt-24">
+        <section className="min-w-0">
 
             <p className="font-text text-xs sm:text-sm text-amber-900/70 tracking-wide">// SERVICES</p>
             <h2 className="font-heading font-bold text-2xl mt-2">What I can do for you...</h2>
@@ -79,11 +79,11 @@ export function ServicesTabs() {
                         tabIndex={active === i ? 0 : -1}
                         onClick={() => setActive(i)}
                         onKeyDown={(e) => handleKeyDown(e, i)}
-                        className={`px-4 py-2 md:px-6 md:py-3 font-medium font-text text-xs sm:text-sm border border-solid border-emerald-100 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6] ${
+                        className={`px-4 py-2 md:px-6 md:py-3 font-medium font-text text-xs sm:text-sm border border-solid border-emerald-100 rounded-sm bg-blue-100/70 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6] ${
                             active === i
                                 // the selected tab sits in the "pressed in" state
-                                ? 'bg-[#D6D3CC] shadow-none translate-x-[3px] translate-y-[3px]'
-                                : 'bg-[#f1eee6] shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]'
+                                ? 'shadow-none translate-x-[3px] translate-y-[3px]'
+                                : 'shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]'
                         }`}
                     >
                         {service.label}

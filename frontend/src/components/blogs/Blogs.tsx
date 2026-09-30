@@ -39,7 +39,7 @@ export function Blogs() {
         <section className="pt-8 md:pt-16">
 
             <p className="font-text text-xs sm:text-sm text-amber-900/70 tracking-wide">// WHAT I WRITE</p>
-            <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mt-2">Blogs</h1>
+            <h1 className="mt-2 font-heading font-semibold text-2xl sm:text-3xl md:text-4xl"><span className="text-glow-blue">Blogs.</span></h1>
             <p className="font-text text-sm sm:text-base leading-relaxed text-amber-900/80 mt-3 max-w-2xl">
                 Every post is published on Substack. Click any card to read the full article there.
             </p>
@@ -71,7 +71,7 @@ export function Blogs() {
                             href={blog.substackLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex flex-col h-full border border-solid border-emerald-100 rounded-lg overflow-hidden bg-[#D6D3CC]/40 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]"
+                            className="group flex flex-col h-full border border-solid border-emerald-100 rounded-lg overflow-hidden bg-blue-100/70 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f1eee6]"
                         >
                             {/* bg-cover/bg-center live in the class list so a blog with no
                                 image just falls back to the flat colour, instead of the
