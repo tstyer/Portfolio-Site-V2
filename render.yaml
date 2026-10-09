@@ -7,7 +7,7 @@ services:
   - type: web
     name: portfolio-site-v2
     runtime: node
-    plan: free
+    plan: 0.5c-512mb
 
     # Build the React app first (backend/server.ts serves frontend/dist), then
     # install the server's own dependencies.
@@ -21,6 +21,7 @@ services:
     startCommand: npm --prefix backend start
 
     envVars:
+      - fromGroup: ".env: backend"
       - key: NODE_VERSION
         value: "22"
 
